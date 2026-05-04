@@ -1,6 +1,4 @@
-# Create README.md file with the generated content
-
-content = """# PI-SLM: Physics-Informed Small Language Model for Antimicrobial Peptide Design
+# PI-SLM: Physics-Informed Small Language Model for Antimicrobial Peptide Design
 
 ## Overview
 PI-SLM is a physics-informed small language model designed for antimicrobial peptide (AMP) modeling and generation.  
