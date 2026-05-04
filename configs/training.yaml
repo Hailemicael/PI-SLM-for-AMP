@@ -1,0 +1,37 @@
+# Training Configuration
+
+training:
+  # Stage 1 - Pretraining on DBAASP
+  pretrain:
+    epochs: 50
+    batch_size: 32
+    learning_rate: 0.001
+    patience: 10            # stop if no improvement for 10 epochs
+    device: cuda:1          # GPU 1 is almost empty
+
+  # Stage 2 - Fine-tuning on hBD-2 data
+  finetune:
+    epochs: 500
+    batch_size: 256         # small because dataset is small
+    learning_rate: 0.001  # lower than pretrain - careful fine-tuning
+    patience: 50            # stop if no improvement for 40 epochs
+    device: cuda:3
+
+  # Data split
+  data:
+    train_ratio: 0.70       # 70% for training
+    val_ratio: 0.15         # 15% for validation
+    test_ratio: 0.15        # 15% for testing
+    random_seed: 42         # reproducibility
+
+  # Regularization
+  weight_decay: 0.01       # prevents overfitting
+  grad_clip: 1.0            # prevents exploding gradients
+
+  # Checkpointing
+  checkpoint_dir: /home/hailemicaelyimer/Music/pi_slm/results/checkpoints
+  best_model_name: best_model.pt
+
+  # Logging
+  log_dir: results/logs
+  log_every: 10             # print results every 10 epochs

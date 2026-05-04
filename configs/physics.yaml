@@ -1,0 +1,18 @@
+# Physics Constraints Configuration
+physics:
+  warmup_epochs: 30       # no physics loss for first 30 epochs
+  ramp_epochs: 20         # gradually increase from epoch 30 to 50
+  final_weight: 0.85    # final physics loss weight after epoch 50
+
+  constraints:
+    energy_structure:
+      enabled: true
+      weight: 1.0
+    hbond_feasibility:
+      enabled: true
+      weight: 0.7
+      max_hbonds: 8.0       # maximum physically possible H-bonds
+      min_hbonds: 0.0       # minimum physically possible H-bonds
+    thermodynamic:
+      enabled: true
+      weight: 0.5

@@ -1,0 +1,17 @@
+model:
+  dropout: 0.1
+  embed_dim: 128
+  ff_dim: 256
+  heads:
+    binder:
+      enabled: true
+    delta_g:
+      enabled: true
+    h_bonds:
+      enabled: true
+    rmsd:
+      enabled: true
+  max_seq_len: 50
+  num_heads: 8
+  num_layers: 4
+  vocab_size: 22

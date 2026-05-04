@@ -1,0 +1,22 @@
+# Model Architecture Configuration
+# Custom Small Language Model for AMP binding affinity prediction
+
+model:
+  vocab_size: 22        # 20 amino acids + padding + unknown
+  embed_dim: 128        # dimension of amino acid embeddings
+  num_layers: 4         # number of transformer encoder layers
+  num_heads: 8          # number of attention heads per layer
+  ff_dim: 256           # feed-forward layer dimension (2x embed_dim)
+  dropout: 0.4          # dropout rate for regularization
+  max_seq_len: 13       # fixed sequence length (RES18-RES30)
+
+  # Output heads - what the model predicts
+  heads:
+    delta_g:            # binding free energy (kcal/mol)
+      enabled: true
+    rmsd:               # structural stability (Angstrom)
+      enabled: true
+    h_bonds:            # hydrogen bond count
+      enabled: true
+    binder:             # binary: does it bind or not
+      enabled: true
