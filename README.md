@@ -28,13 +28,3 @@ results/
 
 ## Outputs
 ΔG, RMSD, H-bonds
-
-## License
-MIT
-"""
-
-file_path = "/mnt/data/README.md"
-with open(file_path, "w") as f:
-    f.write(content)
-
-file_path
